@@ -37,6 +37,6 @@ public class Main {
             minLenght = (int)Arrays.stream(el).filter(x -> x != 0).count();
         }
 
-        System.out.println("Наименьшая длина конструкции: " + minLenght);
+        System.out.println("РќР°РёРјРµРЅСЊС€Р°СЏ РґР»РёРЅР° РєРѕРЅСЃС‚СЂСѓРєС†РёРё: " + minLenght);
     }
 }
