@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-
     public static void main(String[] args) {
         String line1 = "12121212";
         String line2 = "21212121";
@@ -10,7 +9,7 @@ public class Main {
         String maxLine = "0".repeat(line2.length()) + line1 + "0".repeat(line2.length());
         int[] maxArray = Arrays.stream(maxLine.split("")).mapToInt(Integer::parseInt).toArray();
         int[] subArray = Arrays.stream(line2.split("")).mapToInt(Integer::parseInt).toArray();
-        
+
         ArrayList<int[]> list = new ArrayList<>();
         int startIndex = 0;
 
