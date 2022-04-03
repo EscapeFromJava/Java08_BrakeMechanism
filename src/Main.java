@@ -1,14 +1,21 @@
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        String line1 = "12121212";
-        String line2 = "21212121";
+    public static void main(String[] args) throws IOException {
+        String fileInput = "INPUT.txt";
+        String fileOutput = "OUTPUT.txt";
+        List<String> line = Files.readAllLines(Paths.get(fileInput), StandardCharsets.UTF_8);
 
-        String maxLine = "0".repeat(line2.length()) + line1 + "0".repeat(line2.length());
+        String maxLine = "0".repeat(line.get(1).length()) + line.get(0) + "0".repeat(line.get(1).length());
         int[] maxArray = Arrays.stream(maxLine.split("")).mapToInt(Integer::parseInt).toArray();
-        int[] subArray = Arrays.stream(line2.split("")).mapToInt(Integer::parseInt).toArray();
+        int[] subArray = Arrays.stream(line.get(1).split("")).mapToInt(Integer::parseInt).toArray();
 
         ArrayList<int[]> list = new ArrayList<>();
         int startIndex = 0;
@@ -37,6 +44,6 @@ public class Main {
             minLenght = (int)Arrays.stream(el).filter(x -> x != 0).count();
         }
 
-        System.out.println("Наименьшая длина конструкции: " + minLenght);
+        Files.write(Paths.get(fileOutput), Collections.singleton(String.valueOf(minLenght)));
     }
 }
