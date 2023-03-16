@@ -16,7 +16,7 @@ public class Main {
         String maxLine = "0".repeat(line.get(1).length()) + line.get(0) + "0".repeat(line.get(1).length());
         int[] maxArray = Arrays.stream(maxLine.split("")).mapToInt(Integer::parseInt).toArray();
         int[] subArray = Arrays.stream(line.get(1).split("")).mapToInt(Integer::parseInt).toArray();
-
+        System.out.println("ne ok");
         ArrayList<int[]> list = new ArrayList<>();
         int startIndex = 0;
 
