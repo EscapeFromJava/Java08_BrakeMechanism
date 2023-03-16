@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        System.out.println("ok");
         String fileInput = "INPUT.txt";
         String fileOutput = "OUTPUT.txt";
         List<String> line = Files.readAllLines(Paths.get(fileInput), StandardCharsets.UTF_8);
